@@ -65,6 +65,7 @@ def binarySearch(arr, l, r, x):
         # Element is not present in the array
         return -1
 
+
 if __name__ == '__main__':
     # n = int(input())
     # a = [int(x) for x in input().split()]

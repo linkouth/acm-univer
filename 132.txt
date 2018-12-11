@@ -1,0 +1,22 @@
+def heappush(heap, value):
+	heap.append(value)
+	v = len(heap) - 1
+	while v and heap[v] > heap[(v - 1) // 2]:
+		heap[v], heap[(v - 1) // 2] = heap[(v - 1) // 2], heap[v]
+		v = (v - 1) // 2
+
+		
+if __name__ == '__main__':
+	heap = []
+	n = int(input())
+	for i in range(n):
+		el = input()
+		heappush(heap, (el, i))
+		
+	queue = [None] * n
+	
+	for i in range(n):
+		queue[heap[i][1]] = i + 1
+		
+	for i in range(n):
+		print(queue[i])
