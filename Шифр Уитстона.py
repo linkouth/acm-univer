@@ -1,6 +1,17 @@
 from collections import OrderedDict
 
 
+def find_position(char, first_matrix):
+	print(char)
+
+	for i in range(len(first_matrix)):
+		for j in range(len(row)):
+			print("i: {}, j: {}".format(i, j))
+			if first_matrix[i][j] == char:
+				print('11')
+				return i, j
+
+
 if __name__ == '__main__':
 	alph = [chr(i) for i in range(1072, 1103 + 1)]
 	alph.extend([',', '.', ';', ':', ' ', '!'])
@@ -22,7 +33,6 @@ if __name__ == '__main__':
 	for i in key:
 		first_matrix[0].append(i)
 	count = 0
-	# while count < alph_size - key_size:
 	for i in range(1, row_number - 1):
 		for j in range(key_size):
 			first_matrix[i].append(tmp_alph[count])
@@ -63,3 +73,22 @@ if __name__ == '__main__':
 		for char in row:
 			print(char, end=' ')
 		print()
+
+	# text = input('Введите текст сообщения: ')
+	text = 'типа'
+	text = 'бчмл'
+
+	type = int(input('1 - encrypt, 2 - decrypt'))
+
+	result = ''
+	if type == 1:
+		for char in text:
+			i, j = find_position(char, first_matrix)
+			result += second_matrix[i][j]
+	elif type == 2:
+		for char in text:
+			i, j = find_position(char, second_matrix)
+			result += first_matrix[i][j]
+
+
+	print(result)
