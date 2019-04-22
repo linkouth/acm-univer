@@ -1,0 +1,42 @@
+from random import randrange
+
+if __name__ == '__main__':
+    # message = input('Enter the message: ')
+    # key = input('Enter the key: ')
+    # mode = input('Encrypt or decrypt: ')
+
+    # message = 'Простой текст'
+    # key = 'ключ'
+    # mode = 'encrypt'
+
+    message = ';ПНРС:И;СД,РС'
+    key = 'Яключ'
+    mode = 'decrypt'
+
+    LETTERS = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФЧЦЧШЩЪЫЬЭЮЯ0123456789,.!,:; '
+
+    key_len = len(key)
+    letters_len = len(LETTERS)
+
+    translated = ''
+
+    message = message.upper()
+
+    cryptogramma = LETTERS[randrange(0, 34)] + key
+
+    print(cryptogramma)
+
+    for i, symbol in enumerate(message):
+        if symbol in LETTERS:
+            num = LETTERS.find(symbol)
+            key_num = LETTERS.find(cryptogramma[i % len(cryptogramma)])
+            decrypt_key_num = LETTERS.find(key[i % len(key)])
+            if mode == 'encrypt':
+                num = (num + key_num) % letters_len
+            elif mode == 'decrypt':
+                num = (num - decrypt_key_num) % letters_len
+            translated = translated + LETTERS[num]
+        else:
+         translated = translated + symbol
+
+    print(translated)
