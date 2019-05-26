@@ -1,0 +1,13 @@
+/Users/user/Projects/acm-univer/105.cpp:25:5: error: use of undeclared identifier 'IS_BRIDGE'
+                                IS_BRIDGE(v,to);
+                                ^
+/Users/user/Projects/acm-univer/105.cpp:32:18: error: use of undeclared identifier 'n'
+        for (int i=0; i<n; ++i)
+                        ^
+/Users/user/Projects/acm-univer/105.cpp:34:18: error: use of undeclared identifier 'n'
+        for (int i=0; i<n; ++i)
+                        ^
+/Users/user/Projects/acm-univer/105.cpp:39:5: error: cannot combine with previous 'int' declaration specifier
+int int main() {
+    ^
+4 errors generated.
